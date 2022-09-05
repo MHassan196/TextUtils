@@ -13,6 +13,20 @@ export default function TextForm(props) {
         let newText = text.toLowerCase();
         setText(newText);
     }
+    const handleClearoclick = () => {
+        // console.log("UpperCase was clicked");
+        let newText = '';
+        setText(newText);
+    }
+    const handleCopyoclick = () => {
+        let text = document.getElementById("mybox");
+        text.select();
+        navigator.clipboard.writeText(text.value);
+    }
+    const handleExtraspaces = () => {
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+    }
 
     const handleOnchange = (event) => {
         // console.log("On Change");
@@ -26,7 +40,10 @@ export default function TextForm(props) {
                 <textarea className="form-control" value={text} onChange={handleOnchange} id="mybox" rows="8"></textarea>
             </div>
             <button className="btn btn-primary mx-2" onClick={handleUpclick}>Convert To UpperCase</button>
-            <button className="btn btn-primary" onClick={handleLoclick}>Convert To LowerCase</button>
+            <button className="btn btn-primary mx-2" onClick={handleLoclick}>Convert To LowerCase</button>
+            <button className="btn btn-primary mx-2" onClick={handleClearoclick}>Clear Text</button>
+            <button className="btn btn-primary mx-2" onClick={handleCopyoclick}>Copy Text</button>
+            <button className="btn btn-primary mx-2" onClick={handleExtraspaces}>Remove Extra Spaces</button>
         </div>
         <div className="container my-3">
             <h2>Your Text Summary</h2>
