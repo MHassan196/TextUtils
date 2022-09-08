@@ -44,16 +44,16 @@ export default function TextForm(props) {
             <div className="mb-3">
                 <textarea className="form-control" value={text} onChange={handleOnchange} style={{backgroundColor: props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'#042743'}} id="mybox" rows="8"></textarea>
             </div>
-            <button className="btn btn-primary mx-2" onClick={handleUpclick}>Convert To UpperCase</button>
-            <button className="btn btn-primary mx-2" onClick={handleLoclick}>Convert To LowerCase</button>
-            <button className="btn btn-primary mx-2" onClick={handleClearoclick}>Clear Text</button>
-            <button className="btn btn-primary mx-2" onClick={handleCopyoclick}>Copy Text</button>
-            <button className="btn btn-primary mx-2" onClick={handleExtraspaces}>Remove Extra Spaces</button>
+            <button className="btn btn-primary mx-2 my-1" onClick={handleUpclick}>Convert To UpperCase</button>
+            <button className="btn btn-primary mx-2 my-1" onClick={handleLoclick}>Convert To LowerCase</button>
+            <button className="btn btn-primary mx-2 my-1" onClick={handleClearoclick}>Clear Text</button>
+            <button className="btn btn-primary mx-2 my-1" onClick={handleCopyoclick}>Copy Text</button>
+            <button className="btn btn-primary mx-2 my-1" onClick={handleExtraspaces}>Remove Extra Spaces</button>
         </div>
         <div className="container my-3" style={{color: props.mode==='dark'?'white':'#042743'}}>
             <h2>Your Text Summary</h2>
-            <p>{text.split(" ").length} words and {text.length} characters</p>
-            <p>{0.008 * text.split(" ").length} Minutes read</p>
+            <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+            <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
             <h2>Preview</h2>
             <p>{text.length>0?text:"Enter Something in the textbox to preview it here"}</p>
         </div>
