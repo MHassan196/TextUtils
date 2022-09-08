@@ -27,7 +27,7 @@ export default function Navbar(props) {
                         <button cla
                         ssName="btn btn-primary" type="submit">Search</button>
                     </form> */}
-          <div className={`form-check mx-3 text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+          {/* <div className={`form-check mx-3 text-${props.mode === 'light' ? 'dark' : 'light'}`}>
             <input className="form-check-input" onClick={props.toggleGreen} type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
               <label className="form-check-label" htmlFor="flexRadioDefault1">
                 Dark Green
@@ -44,7 +44,7 @@ export default function Navbar(props) {
               <label className="form-check-label" htmlFor="flexRadioDefault1">
                 Dark red
               </label>
-          </div>
+          </div> */}
           <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
             <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault" />
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable {props.mode === 'light' ? 'Dark' : 'Light'} Mode</label>
