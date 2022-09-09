@@ -19,7 +19,7 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
       showAlert("Dark mode has been enabled", "success");
-      document.title = "TextUtils - Dark Mode";
+      // document.title = "TextUtils - Dark Mode";
       // setInterval(() => {
       //   document.title = "TextUtils is Amazing";
       // }, 2000);
@@ -31,7 +31,7 @@ function App() {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode has been enabled", "success");
-      document.title = "TextUtils - Light Mode";
+      // document.title = "TextUtils - Light Mode";
     }
   }
 
@@ -57,11 +57,10 @@ function App() {
 
         <div className="container my-3">
           {/* <Routes> */}
-          {/* <Route path="/" element={<TextForm showAlert={showAlert} heading="Enter The Text Here" mode={mode} />}/> */}
+          {/* <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter The Text To Remove Extra Spaces And Manipulate Text" mode={mode} />}/> */}
           <TextForm showAlert={showAlert} heading="Enter The Text Here" mode={mode} />
             
-            {/* <Route path="/about" element={<About />}/> */}
-              
+            {/* <Route exact path="/about" element={<About  mode={mode}/>}/> */}
             
           {/* </Routes> */}
 
